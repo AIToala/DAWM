@@ -1,6 +1,6 @@
 # DAWM - PROJECT 01
 
-## Portfolio Web Design
+## My own Portfolio Web Design
 
 ### Original ideas
 - Logo with gradient, text "AiT"
