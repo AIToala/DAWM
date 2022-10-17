@@ -1,6 +1,7 @@
 # DAWM - PROJECT 01
 
 ## My own Portfolio Web Design
+To get a preview of the current website you can access it going to this [link](aitoala.github.io).
 
 ### Original ideas
 - Vertical Carrousel for companies or organizations that i have contacted and worked with.
