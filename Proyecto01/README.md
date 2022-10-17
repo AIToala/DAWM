@@ -3,11 +3,9 @@
 ## My own Portfolio Web Design
 
 ### Original ideas
-- Logo with gradient, text "AiT"
+- Vertical Carrousel for companies or organizations that i have contacted and worked with.
 
 ### Tools to use
-* FluidUI
-* Sketch
 * Figma
 
 ### Inspirations
