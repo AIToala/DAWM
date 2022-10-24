@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>Andrés Toala - Software Engineer</title>
     
     <!-- Stylesheet-->
     <link rel="stylesheet" type="text/css" href="public/stylesheets/style.css">
 </head>
 <body>
+    <div class="bg-lines">
+        <div class="top-line linehr1"></div>
+        <div class="top-line linehr2"></div>
+        <div class="top-line linehr3"></div>
+    </div>
     <header id="header" class="container">
         <div class="header flex container">
             <div class="logo">
@@ -169,7 +174,7 @@
                             <h3>Internship in Systems</h3>
                         </li>
                     </ul>
-                    <h3 class="font-roboto text-important">Looking for more experiences :)</h3>
+                    <h3 class="font-roboto font-bold text-important">Looking for more experiences :)</h3>
                 </section>
                 <hr>
                 <section>
@@ -257,6 +262,32 @@
                 </section>
             </div>
         </section>
+        <div id="contact" class="items-center justify-center container flex flex-row">
+            <section class="items-center justify-center text-center form-container border">
+                <h2 class="text-important font-bold text-lg">Let´s collab!</h2>
+                <p class="text-important">or just hang out</p>
+                <form id="contact-form" class="flex flex-column" method="post">
+                    <label for="name">Full name</label>
+                    <input type="text" name="name" id="name" placeholder="Your full name" required>
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="Your email" required>
+                    <label for="message">Message</label>
+                    <textarea name="message" id="message" cols="30" rows="8" placeholder="Your message"></textarea>
+                    <button class="font-light" type="submit" id="submit" name="submit">Contact</button>
+                </form>
+            </section>
+            <div class="map">
+                <div class="info-box font-roboto">
+                    <p><span>Andrés Toala</span></p>
+                    <p>Email: <span>ai_toala@outlook.com</span></p>
+                    <p>Study at <span>FIEC ESPOL</span></p>
+                    <br>
+                    <p>Usually enjoy soccer at Parque Samanes on weekends</p>
+                </div>
+                <iframe aria-hidden="true" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.1350638595577!2d-79.89939668499245!3d-2.101437637651843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe165da40bdac09b7!2zMsKwMDYnMDUuMiJTIDc5wrA1Myc1MC4wIlc!5e0!3m2!1sen!2sec!4v1666634095635!5m2!1sen!2sec" frameborder="0" scrolling="no"  width="600" height="450" style="border:0;"></iframe>
+            </div>
+            
+        </div>
     </div>
     <footer id="footer" class="footer flex flex-column container">
         <div class="logo">
