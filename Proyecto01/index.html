@@ -122,8 +122,25 @@
                     <div class="music-box font-roboto ">
                         <p class="font-roboto" >Some music and playlists._</p>
                         <ul class="music-list font-roboto">
-                            <li>Tokio - Los Mesoneros</li>
-                            <li>Chill Lofi Study Beats</li>
+                            <li>
+                                <div class="music">
+                                    <p>Tokio - Los Mesoneros</p>
+                                    <button>
+                                        <svg class="icon" viewBox="0 0 32 32"><path d="M16 0c-8.837 0-16 7.163-16 16s7.163 16 16 16 16-7.163 16-16-7.163-16-16-16zM16 29c-7.18 0-13-5.82-13-13s5.82-13 13-13 13 5.82 13 13-5.82 13-13 13zM12 9l12 7-12 7z"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="music">
+                                    <p>Chill Lofi Study Beats</p>
+                                    <button>
+                                        <svg class="icon" viewBox="0 0 32 32">
+                                            <path d="M16 0c-8.837 0-16 7.163-16 16s7.163 16 16 16 16-7.163 16-16-7.163-16-16-16zM16 29c-7.18 0-13-5.82-13-13s5.82-13 13-13 13 5.82 13 13-5.82 13-13 13zM12 9l12 7-12 7z"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -196,20 +213,16 @@
                             <li>
                                 <h3>Motivation</h3>
                                 <p class="score">1000%</p>
-                                <hr>                 
+                                <hr class="bg-decor1">                 
                             </li>   
                         </ul>
-                        <h3>I like to code and almost spend all night thinking why a div doesn't center :)</h3>
+                        <h3 class="text-justify">I like to code and almost spend all night thinking why a div doesn't center :)</h3>
                         <div class="languages w-100 items-center flex flex-row">
                             <h3>Languages</h3>
                             <hr>
                             <ul>
-                                <li>
-                                    <h4>Spanish - Native</h4>
-                                </li>
-                                <li>
-                                    <h4>English - C2</h4>
-                                </li>
+                                <li>Spanish - Native</li>
+                                <li>English - C2</li>
                             </ul>
                         </div>
                     </div>
@@ -217,8 +230,32 @@
             </div>
         </div>
 
-        <section id="works" class="container">
-            <h2>Latest Works</h2>
+        <section id="works" class="items-center justify-center text-center container">
+            <h2 class="text-lg">Latest Works</h2>
+            <hr class="bg-secondary line w-50">
+            <div class="works-list">
+                <section class="work">
+                    <p>WEB & MOBILE</p>
+                    <h3 class="text-md">Medical Heart ON</h3>
+                    <div class="work-img">
+                        <img src="images/work1.png" alt="Medical Heart ON">
+                    </div>
+                </section>
+                <section class="work">
+                    <p>DESKTOP APP</p>
+                    <h3 class="text-md">Teammates Data Plotter</h3>
+                    <div class="work-img">
+                        <img src="images/work2.png" alt="Teammates Data Plotter">
+                    </div>
+                </section>
+                <section class="work">
+                    <p>DESKTOP APP</p>
+                    <h3 class="text-md">Online Events - IEvents</h3>
+                    <div class="work-img">
+                        <img src="images/work3.png" alt="IEvents">
+                    </div>
+                </section>
+            </div>
         </section>
     </div>
     <footer id="footer" class="footer flex flex-column container">

@@ -236,6 +236,12 @@ div{
     background: var(--bg-pres-cover);
     object-fit: fill;
 }
+.bg-secondary{
+    background: var(--text-secondary);
+}
+.bg-decor1{
+    background: var(--text-decor1)!important;
+}
 .border-decor1{
     border-color: var(--text-decor1);
 }
@@ -316,7 +322,10 @@ div{
     color: var(--text-secondary);
     font-weight: 700;
 }
-
+.line{
+    border: none;
+    height: 1px;
+}
 /* ------------ Global Clases ------------ */
 ::selection{
     background-color: #e34061;
@@ -328,14 +337,15 @@ div{
 
 .header{
     position: relative;
-    padding: 40px 0 60px 0;
-    vertical-align: middle;
+    padding: 40px 30px 60px 30px;
     align-items: center;
     width: 100%;
 }
-.header .logo{
-    margin: 0;
-    padding-left: 20px;
+.header:first-child{
+    margin-right: auto;
+}
+.header:last-child{
+    margin-left: auto;
 }
 
 .header #nav ul{
@@ -343,9 +353,7 @@ div{
 }
 
 .header .socials-header {
-    position: relative;
     gap: 1rem;
-    padding-right: 20px;
 }
 
 .header .logo a img{
@@ -509,7 +517,6 @@ div{
     gap: 5vw;
     height: 100%;
 }
-
 .photo-bg{
     border: .25px solid #00ADB5;
     background-color: rgba(0, 0, 0, .125);
@@ -518,7 +525,6 @@ div{
     height: fit-content;
 
 }
-
 .photo{
     padding: 5% 2.5% 5% 2.5%;
     border: 1px solid #00ADB5;
@@ -537,7 +543,6 @@ div{
 .photo .socials-about{
     gap: 10px;
 }
-
 .photo .socials-about li .icon:hover{
     fill: #e34061!important;    
 }
@@ -550,15 +555,31 @@ div{
 .photo-bg .music-box > :first-child{
     margin-bottom: 15px;
 }
-.photo-bg .music-box .music-list{
-    list-style: disc inside;
+.photo-bg .music-box .music-list li{
+    display: flex;
+    align-items: center;
+}
+.photo-bg .music-box .music-list li .icon:hover{
+    fill: var(--text-decor1)!important;
+}
+.photo-bg .music-box .music-list li .music{
+    display: contents;
+}
+.photo-bg .music-box .music-list li .music p{
+    display: inline-flex;
+    margin-right: auto;
+    height: fit-content;
+}
+
+.photo-bg .music-box .music-list li button{
+    background: transparent;
+    cursor: pointer;
+    border: none;
+    height: fit-content;
 }
 .photo-bg .music-box ul > *{
     margin-bottom: 5px;
 }
-
-
-
 .aboutme{
     padding: 5% 2.5% 5% 2.5%;
     border: 1px solid #00ADB5;
@@ -570,17 +591,18 @@ div{
 .aboutme > p{
     color: rgb(236, 216, 216);
 }
-
 .aboutme > *{
     margin-bottom: 30px;
 }
 .aboutme > :last-child{
     margin-bottom: 0;
 }
-
 .interests > *{
     transform: scale(1);
     box-shadow: 0 0 #0000, 0 0 #0000, 0 1px 2px 0 rgba(0,0,0,.05);
+}
+.interests > *:hover{
+    background-color: #000;
 }
 
 /* ------------ Experiences / Education / Skills Section ------------ */
@@ -638,9 +660,6 @@ div{
     padding: 0 2.5% 0 2.5%;
 }
 
-.exp-cont section .skills .skills-list > :last-child{
-    background-color: var(--text-decor1);
-}
 .exp-cont section .skills > *{
     font-family: var(--font-roboto)!important;
     margin-bottom: 25px;
@@ -665,11 +684,14 @@ div{
     background-color: #FFF;
     color: #000;
 }
+.exp-cont section .skills .languages ul{
+    list-style: disc inside;
+}
 .exp-cont section .skills .languages hr{
     background-color: var(--text-important);
     border: none;
     height: 1px;
-    width: 100%;
+    width: 50%;
 }
 
 .exp-cont > hr{
@@ -679,6 +701,44 @@ div{
     height: 1px;
 }
 
+/* ------------ Latest works Section ------------ */
+
+#works{
+    width: 100%;
+    padding: 0 2% 0 2%;
+}
+
+#works .works-list{
+    width: 100%;
+    padding: 5%;
+}
+#works .works-list > *{
+    margin-bottom: 120px;
+}
+
+#works .works-list .work{
+    width: 100%;
+    height: 100%;
+    padding: 2.5%;
+    border: 1px solid var(--text-secondary);
+    border-radius: 20px;
+    background-color: #201f23;
+}
+#works .works-list .work h3{
+    margin-top: 10px;
+    margin-bottom: 40px;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+#works .works-list .work p, #works .works-list .work h3{
+    text-align: right;
+}
+#works .works-list .work .work-img img{
+    width: 75%;
+    height: auto;
+    border: none;
+    border-radius: 20px;
+}
 /* ------------ Footer ------------ */
 .footer{
     position: relative;
