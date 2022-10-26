@@ -420,6 +420,13 @@ img, video {
     .aboutme{
         width: 100%!important;
     }
+    .table-cont{
+        padding: 0 2.5% 20% 2.5%!important;
+    }
+    table{
+        display: flexbox;
+        font-size: 0.7em;
+    }
     .exp-cont section{
         width: 100%!important;
     }
@@ -764,7 +771,6 @@ img, video {
 #about table{
     width: 100%;
     height: 100%;
-    padding: .25%;
     background: #201f23;
     border-radius: 5px;
 }
@@ -778,7 +784,8 @@ img, video {
 #about table td{
     text-align: center;
     font-weight: 300;
-    padding: 2%;
+    word-break: break-all;
+    padding: 2.5%;
     border: 1px solid var(--text-secondary);
 }
 #about table tr:nth-child(odd){
