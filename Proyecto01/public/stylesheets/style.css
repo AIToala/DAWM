@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 
 /* ------------ VARIABLES ------------ */
@@ -44,6 +42,7 @@ body {
     color: white;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    text-rendering: optimizeLegibility;
 }
 a{
     text-decoration: none;
@@ -346,6 +345,7 @@ img, video {
     color: var(--text-secondary);
     font-weight: 700;
 }
+
 .line{
     border: none;
     height: 1px;
@@ -357,8 +357,21 @@ img, video {
 }
 /* ------------ Media Query ------------ */
 
-@media only screen and (max-device-width: 700px) {
+@media only screen and (min-device-width: 310px) and (max-device-width: 700px) {
+    body{
+        font-size: 1em!important;
+    }
+    h2{
+        font-size: 1.5em!important;
+    }
+    h3{
+        font-size: 1em!important;
+    }
+    p{
+        font-size: 0.8em!important;
+    }
     .header{
+        width: 100vw;
         padding: 20px 30px!important;
     }
     #nav{
@@ -378,7 +391,7 @@ img, video {
         padding: 10px!important;
     }
     .sign{
-
+        width: 100vw!important;
     }
     .pres .slider-container{
         width: 100vw;
@@ -395,26 +408,34 @@ img, video {
     .about{
         flex-direction: column;
     }
+    .photo-bg{
+        width: 80%!important;
+    }
     .aboutme{
-        width: 100%;
+        width: 100%!important;
     }
-    
+    .exp-cont section{
+        width: 100%!important;
+    }
+    .languages li{
+        font-size: 0.55em;
+    }
+    .work > *{
+        text-align: center!important;
+    }
+    #contact{
+        flex-direction: column;
+        padding-top: 5%;
+        padding-left: 0!important;
+    }
+    #contact .form-container{
+        width: 90%!important;
+    }
 }
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-    #nav{
-        display: none;
-    }
-    .socials-header{
-        display: none;
-    }
-}
-/*
-@media (min-width: 640px) { body {font-size:1rem;} }
-@media (min-width:960px) { body {font-size:1.2rem;} }
-@media (min-width:1100px) { body {font-size:1.5rem;} }
-*/
 
-/* ------------ aesthethics ------------ */
+
+
+/* ------------ aesthetics ------------ */
 .bg-lines{
     width: 100%;
     height: 100%;
@@ -438,6 +459,7 @@ img, video {
     -webkit-transform: skewY(-45deg);
     transform: skewY(-45deg);
     background-color: var(--text-decor1);
+    opacity: 0.5;
 }
 .linehr2{
     top: 135rem;
@@ -448,6 +470,7 @@ img, video {
     transform: skewY(45deg);
     z-index: -1;
     background-color: #e34061;
+    opacity: 0.5;
 }
 .linehr3{
     top: 215rem;
@@ -458,49 +481,46 @@ img, video {
     transform: skewY(-45deg);
     z-index: -1;
     background-color: #e34061;
+    opacity: 0.5;
 }
 /* ------------ Header & Navigation ------------ */
 
 .header{
     position: relative;
-    padding: 40px 30px 60px 30px;
+    padding: 3% 2% 3% 2%;
     align-items: center;
     width: 100%;
 }
-.header:first-child{
-    margin-right: auto;
-}
-.header:last-child{
-    margin-left: auto;
-}
-
 .header #nav ul{
     gap: 2.5rem;
 }
-
+.header #nav ul:hover > li > .linknav{
+    opacity: 0.3;
+}
+.header #nav ul:hover > li > .linknav:hover{
+    opacity: 1;
+}
 .header .socials-header {
     gap: 1rem;
 }
-
 .header .logo a img{
-    max-width: 100%;
     height: auto;
+    max-width: 60px;
     max-width: 80px;
     vertical-align: middle;
 }
-
 /* ------------ Banner Section ------------*/
 
 #main .banner-section{
+    width: 100vw;
     position: relative;
+    height: 100%;
     height: 80vh;
     overflow: hidden;
 }
-
 #main .banner-section .pres{
     position: relative;
     padding: 0 .5% 0 .5%;
-    vertical-align: middle;
     align-items: center;
     width: 100%;
 }
@@ -514,11 +534,9 @@ img, video {
     display: block;
     margin-top: 15px;
 }
-
 .banner-title > *:first-child {
     margin-top: 0px;
 }
-
 .banner-title > .descr{
     color: #000;
     background-color: #fff;
@@ -528,25 +546,23 @@ img, video {
     overflow: hidden;
     white-space: nowrap;
     border-right: 3px solid #00ADB5;
-    animation: typing 2.5s steps(34), blink .5s step-end infinite alternate;
+    animation: typing 2.5s steps(33), blink .5s step-end infinite alternate;
 }
 @keyframes typing {
   from {
     width: 0
   }
 }
-    
 @keyframes blink {
   50% {
     border-color: transparent
   }
 }
-
-
 #bg{
     display: block;
     position: absolute;
     height: 100%;
+    width: 100%;
     background: linear-gradient(0deg, rgba(0, 173, 181, 0.5), rgba(0, 173, 181, 0.5)),var(--bg-pres-cover);
     background-position: center;
     background-size: cover;
@@ -564,7 +580,6 @@ img, video {
     justify-content: center;
     align-items: center;
 }
-
 @keyframes scroll {
     0% {
         transform: translateX(0);
@@ -603,24 +618,16 @@ img, video {
 .slider .slide-track {
     animation: scroll 4s linear infinite;
     display: flex;
-    width: calc(250px*4);
+    width: 100%;
 }
 .slider .slide {
-    height: 100px;
-    width: 250px;
+    height: 60%;
+    width: 100%;
+    align-self: center;
 }
 .slider .slide img{
-    height: 100%;
-    width: 200px;
-}
-
-.line-v{
-    position: relative;
-    width: 10px;
-    height: 100%;
-    background-color: #00ADB5;
-    mix-blend-mode: overlay;
-    border: none;
+    height: 50%;
+    width: 100%;
 }
 .sign{
     position: absolute;
@@ -629,15 +636,14 @@ img, video {
     width: 10%;
     mix-blend-mode: overlay;
 }
-
 .sign > *{
     width: 100%;
     height: 100%;
 }
-
-
 /* ------------ About me Section ------------ */
-
+.about-section{
+    width: 100%;
+}
 .about{
     padding: 80px 5% 60px 5%;
     gap: 5vw;
@@ -649,7 +655,7 @@ img, video {
     border-radius: 0.5rem;
     padding: 2.5% 2.5% 2.5% 2.5%;
     height: fit-content;
-
+    width: 30%;
 }
 .photo{
     padding: 5% 2.5% 5% 2.5%;
@@ -662,9 +668,10 @@ img, video {
     margin-bottom: 20px;
 }
 .photo > img{
-    width: 135px;
+    width: 60%;
     height: auto;
     border-radius: 20px;
+    filter: brightness(1.1) ;
 }
 .photo .socials-about{
     gap: 10px;
@@ -673,7 +680,7 @@ img, video {
     fill: #e34061!important;    
 }
 .photo-bg .music-box{
-    width: 400px;
+    width: 100%;
 }
 .photo-bg .music-box > *{
     font-size: small;
@@ -703,6 +710,15 @@ img, video {
     border: none;
     height: fit-content;
 }
+.hide-toggle{
+    display: none;
+}
+.show-toggle{
+    display: block;
+}
+#stop{
+    display: none;
+}
 .photo-bg .music-box ul > *{
     margin-bottom: 5px;
 }
@@ -712,10 +728,13 @@ img, video {
     background-color: #201f23;
     align-items: center;
     height: fit-content;
+    width: 60%;
     border-radius: 0.5rem;
 }
 .aboutme > p{
     color: rgb(236, 216, 216);
+    padding: 5%;
+    hyphens: auto;
 }
 .aboutme > *{
     margin-bottom: 30px;
@@ -730,19 +749,65 @@ img, video {
 .interests > *:hover{
     background-color: #000;
 }
+#about .table-cont{
+    align-self: center;
+    width: 100%;
+    padding: 0 10% 20% 10%;
+}
+#about table{
+    width: 100%;
+    height: 100%;
+    padding: .25%;
+    background: #201f23;
+    border-radius: 5px;
+}
+#about table th{
+    background-color: #000;
+    color: var(--text-decor1);
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 5%;
+}
+#about table td{
+    text-align: center;
+    font-weight: 300;
+    padding: 2%;
+    border: 1px solid var(--text-secondary);
+}
+#about table tr:nth-child(odd){
+    background-color: #201f23;
+}
+#about table tr:nth-child(even){
+    background-color: #373A43;
+}
+#about table tbody tr td a{ 
+    color: #fff;
+}
+#about table tr:hover{
+    background-color: rgba(227, 64, 97,.7);
+}
+#about table tr td:hover {
+    background-color: #e34061;
+    font-weight: bold;
+    box-shadow: #7F7C21 -1px 1px, #7F7C21 -2px 2px, #7F7C21 -3px 3px, #7F7C21 -4px 4px, #7F7C21 -5px 5px, #7F7C21 -6px 6px;
+    transform: translate3d(6px, -6px, 0);
+    transition-delay: 0s;
+      transition-duration: 0.4s;
+      transition-property: all;
+    transition-timing-function: line;
+}
 
 /* ------------ Experiences / Education / Skills Section ------------ */
 
 #experiences{
     padding: 80px 5% 60px 5%;
 }
-
 .exp-cont{
     padding: 10px 0px;
     gap: 50px;
 }
 .exp-cont section{
-    padding: 10px;
+    padding: 2%;
     gap: 40px;
     display: flex;
     flex-direction: column;
@@ -751,10 +816,9 @@ img, video {
 }
 .exp-cont section > ul{
     width: 100%;
-    background-color: #000;
 }
 .exp-cont section .box-list > *{
-    margin-bottom: 40px;
+    margin-bottom: 5%;
 }
 .exp-cont section .box-list > :last-child{
     margin-bottom: 0;
@@ -763,8 +827,9 @@ img, video {
     border: 1px solid #00ADB5;
     border-radius: 5px;
     width: 100%;
+    background-color: #202125;
     height: fit-content;
-    padding: 10px 45px;
+    padding: 5%;
 }
 .exp-cont section .box-list li > :first-child{
     margin-bottom: 10px;
@@ -779,10 +844,10 @@ img, video {
 }
 .exp-cont section .skills{
     border: 1px solid var(--text-secondary);
-    background-color: #000;
+    background-color: #201f23;
     width: 100%;
     height: 100%;
-    padding: 40px 40px;
+    padding: 5% 5%;
     border-radius: 5px;
 }
 .exp-cont section .skills .skills-list{
@@ -800,14 +865,13 @@ img, video {
     font-weight: 300;
     font-family: var(--font-roboto);
 }
-
 .exp-cont section .skills hr{
     background-color: var(--text-important);
     border: none;
     height: 1px;
 }
 .exp-cont section .skills .languages{
-    gap: 25px;
+    gap: 2%;
     width: 100%;
     padding: 1%;
     background-color: #FFF;
@@ -820,9 +884,8 @@ img, video {
     background-color: var(--text-important);
     border: none;
     height: 1px;
-    width: 50%;
+    width: 20%;
 }
-
 .exp-cont > hr{
     width: 100%;
     background-color: var(--text-secondary);
@@ -836,15 +899,13 @@ img, video {
     width: 100%;
     padding: 0 2% 0 2%;
 }
-
 #works .works-list{
     width: 100%;
     padding: 5%;
 }
 #works .works-list > *{
-    margin-bottom: 120px;
+    margin-bottom: 20%;
 }
-
 #works .works-list .work{
     width: 100%;
     height: 100%;
@@ -855,7 +916,7 @@ img, video {
 }
 #works .works-list .work h3{
     margin-top: 10px;
-    margin-bottom: 40px;
+    margin-bottom: 15%;
     color: var(--text-secondary);
     font-weight: 500;
 }
@@ -863,7 +924,7 @@ img, video {
     text-align: right;
 }
 #works .works-list .work .work-img img{
-    width: 75%;
+    width: 100%;
     height: auto;
     border: none;
     border-radius: 20px;
@@ -872,13 +933,13 @@ img, video {
 /* ------------ Contact Section ------------ */
 
 #contact{
-    height: 100vh;
+    height: 100%;
     gap: 40px;
     padding-left: 5%;
     background-color: #202125;
 }
 #contact .form-container{
-    padding: 20px;
+    padding: 5%;
     width: 50%;
     border-radius: 20px;
     background: #201f23;
@@ -894,6 +955,7 @@ img, video {
 #contact #contact-form label{
     text-align: left;
     font-weight: 300;
+    margin-bottom: 10px;
 }
 #contact #contact-form > input, textarea{
     border-radius: 5px;
@@ -909,6 +971,7 @@ img, video {
     cursor: pointer;
     background-color: var(--text-important);
     border-radius: 10px;
+    border: none;
     padding: 1rem;
     width: 100%;
     color: #FFF;
@@ -916,13 +979,12 @@ img, video {
 #contact #contact-form button:hover{
     background-color: #f26e42;
 }
-
-
 #contact .info-box{
     background-color: rgba(0, 0, 0, .8);
-    padding: 2rem;
+    padding: 1rem;
+    margin-left: .5rem;
+    margin-right: .5rem;
     top: 50px;
-    left: 10px;
     width: fit-content;
     border-radius: 10px;
     position: absolute;
@@ -931,10 +993,9 @@ img, video {
     color: var(--text-secondary);
     font-weight: bold!important;
 }
-
 #contact .map{
     width: 100%;
-    height: 100%;
+    height: 100vh;
     border-radius: 5px;
 }
 #contact .map iframe{
@@ -942,9 +1003,8 @@ img, video {
     width:100%;
 }
 
-
-
 /* ------------ Footer ------------ */
+
 .footer{
     position: relative;
     padding: 40px 0 60px 0;
@@ -953,11 +1013,9 @@ img, video {
     justify-content: center;
     width: 100%;
 }
-
 .footer > * {
     margin-top: 15px;
 }
-
 .footer .logo a img{
     height: auto;
     max-width: 60px;
@@ -967,7 +1025,6 @@ img, video {
     position: relative;
     gap: 1rem;
 }
-
 .footer .line-footer{
     width: 40vw;
     height: 1px;
