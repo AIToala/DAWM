@@ -24,19 +24,3 @@ To get a preview of the current website you can access it going to this [link](a
 
 * [Carrusel presentation](http://www.jayvanhutten.com/)
 <img src="https://user-images.githubusercontent.com/19611806/194370395-e7314ce1-5f62-4776-bba5-258095fa824b.png" width="750">
-
-* [Panels presentation](https://www.lonepalmusjensen.dk/)
-
-* [Aesthetic presentation](https://www.virginiaorosa.com/)
-
-* [Best so far!](https://www.evekayser.com.br/)
-
-* [Responsive!](https://www.yukiasakura.com/)
-
-* [take a look](https://coryhughart.com/)
-
-* [take a look](https://jtom.me/portfolio/)
-
-* [funny footer](https://inakisoria.com/)
-
-* [Dark theme with correct usage of colors](https://studio081.me/)

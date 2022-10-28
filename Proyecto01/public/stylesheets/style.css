@@ -356,7 +356,6 @@ img, video {
     color: #FFF;
 }
 /* ------------ Media Query ------------ */
-
 @media only screen and (min-device-width: 310px) and (max-device-width: 700px) {
     body{
         font-size: 1em!important;
@@ -930,7 +929,7 @@ img, video {
 }
 #works .works-list .work h3{
     margin-top: 10px;
-    margin-bottom: 15%;
+    margin-bottom: 5%;
     color: var(--text-secondary);
     font-weight: 500;
 }
