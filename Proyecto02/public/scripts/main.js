@@ -1,58 +1,122 @@
+var urlAPI = "https://v3.football.api-sports.io/"
+var jsonUrl = "public/resources/"
+var fetchOptions = {
+    "method": "GET",
+    "headers": {
+        "x-rapidapi-host": "v3.football.api-sports.io",
+        "x-rapidapi-key": "576a56d04d67566d241abdf338284bd3"
+    }
+}
+
 window.onload = function () {
-    updateTopScorers("CL","2022")        
-    updateTopAssisters("CL","2022")
+    loadDashboard()
 }
 
 /*
-fetch("https://v3.football.api-sports.io/players/topscorers?league=2&season=2022", {
-        "method": "GET",
-        "headers": {
-            "x-rapidapi-host": "v3.football.api-sports.io",
-            "x-rapidapi-key": "576a56d04d67566d241abdf338284bd3"
-        }
-})
+"https://v3.football.api-sports.io/players/topscorers?league=2&season=2022"
 */
-
-function updateTopScorers(leagueName, season){
-    let url = "public/resources/topscorers" + "-" + leagueName + "-" + season + ".json"
-    fetch(url)
-    .then(response => response.json())
-    .then( data => {
-        let topScorers = data.response.slice(0,5)
-        //for( let scorer of topScorers) {
-        //    let scorerData = scorer.player
-        //    let scorerGoals = scorer.statistics[0].goals.total
-        //    let scorerPhoto = scorerData["photo"]
-        //    let tableElement = `
-        //        <tr>
-        //            <th scope="row">${scorerData["name"]}</td>
-        //            <td style="--size: calc((${scorerGoals}*10)/100)"><span class="data">${scorerGoals}</span></td>
-        //        </tr>`
-        //    document.getElementById("topScorerTable").getElementsByTagName("tbody")[0].innerHTML += tableElement
-        //}
-      })
-    .catch(err => console.error(err))
-    
+async function loadDashboard(){
+    updateTopScorers("CL","2022")
+    updateTopAssisters("CL","2022") 
 }
 
-function updateTopAssisters(leagueName, season){
-    let url = "public/resources/topassisters" + "-" + season + ".json"
-    fetch(url)
-    .then(response => response.json())
-    .then( data => {
-        let topAsissters = data.response.slice(0,5)
-        //for( let assister of topAssisters) {
-        //    let assisterData = assister.player
-        //    let assisterStats = assister.statistics
-        //    let tableElement = `
-        //        <tr>
-        //            <td>${assisterData["name"]}</td>
-        //            <td>${assisterStats[0].team.name}</td>
-        //            <td>${assisterStats[0].games.appearences}</td>
-        //            <td>${assisterStats[0].goals.total}</td>
-        //        </tr>`
-        //    document.getElementById("topassisterTable").getElementsByTagName("tbody")[0].innerHTML += tableElement
-        //}
-      })
-    .catch(err => console.error(err))
+async function updateTopScorers(leagueID, season){
+    var topScorers = document.getElementById("topScorer")
+    var dataScorers = await checkStatusAPI(urlAPI+"players/topscorers?league="+leagueID+"&season="+season)
+    
+    if(dataScorers == undefined | Object.keys(dataScorers['errors'])!=0){
+        dataScorers = await loadFromJSON(jsonUrl+"topscorers" + "-" + season + ".json")
+        dataScorers = dataScorers[leagueID]
+    }
+    loadGraph(dataScorers, topScorers, 'scores')
+    updateImg(dataScorers.response[0].player.photo, "scorer")
+    updateDescription(dataScorers.response[0],"scorer")
+}
+async function updateTopAssisters(leagueID, season){
+    var topAssisters = document.getElementById("topAssister")
+    var dataAssisters = await checkStatusAPI(urlAPI+"players/topassists?league="+leagueID+"&season="+season)
+    
+    if(dataAssisters == undefined | Object.keys(dataAssisters['errors'])!=0){
+        dataAssisters = await loadFromJSON(jsonUrl+"topAssisters" + "-" + season + ".json")
+        dataAssisters = dataAssisters[leagueID]
+    }
+    loadGraph(dataAssisters, topAssisters, 'assists')
+    updateImg(dataAssisters.response[0].player.photo, "assister")
+    updateDescription(dataAssisters.response[0],"assister")
+}
+
+async function checkStatusAPI(url){
+    return new Promise((resolve, reject) => {
+        fetch(url, fetchOptions)
+            .then((response) => {
+                if(response.ok){
+                    return response.json()
+                }
+                console.log("EFE")
+                reject("API REJECTED - " + response.status)
+            })
+        .then((json)=>resolve(json))
+        .catch((err)=> reject(err))
+    })
+}
+async function loadFromJSON(jsonFile){
+    return new Promise((resolve, reject) => {
+        fetch(jsonFile)
+            .then((response) => {
+                if(response.ok){
+                    return response.json()
+                }
+                reject("JSON WITH ERRORS - " + response.status) 
+            })
+        .then((json)=>resolve(json))
+        .catch((err)=> reject(err))
+    })
+}
+
+function loadGraph(data, graph, search){
+    var ctx = graph.getContext("2d")
+    if(Chart.getChart(graph.id)!=undefined)Chart.getChart(graph.id).destroy()
+    let labels = []
+    let values = []
+    for (let player of data.response){
+        let name = player['player'].name
+        if (name >= 18) name.substring(0,17) + "..."
+        labels.push(name)
+        if(search == "scores") values.push(player.statistics[0].goals.total)
+        if(search == "assists") values.push(player.statistics[0].goals.assists)
+    }
+    const options = {
+        labels:labels,
+        datasets:[{
+            label: search.toUpperCase(),
+            data: values
+        }]
+    }
+    let chartito = new Chart(ctx, {
+        type:'bar',
+        data:options,
+        options:{
+            y:{
+                beginAtZero: true
+            },
+            animation: false,
+            responsive: true,
+            maintainAspectRatio: false
+        }
+    })
+
+}
+function updateImg(photoURL, type){
+    if (photoURL){
+        document.getElementById(type+"Photo").setAttribute("src", photoURL)
+    }
+}
+function updateDescription(topPlayer, type){
+    if (topPlayer){
+        let player = topPlayer.player
+        document.getElementById("player-name-"+type).textContent = player.name.toUpperCase()
+        document.getElementById("player-desc-"+type).innerHTML=`<li><b>Age:</b> ${player.age}</li>
+        <li><b>Nationality:</b> ${player.nationality}</li>
+        <li><b>Current Team:</b> ${topPlayer.statistics[0].team.name.toUpperCase()}</li>`
+    }
 }

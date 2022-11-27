@@ -1,0 +1,9 @@
+img#scorerPhoto, img#assisterPhoto{
+    display: block;
+    margin-left: auto;      
+    margin-right: auto;
+    height: 185px;
+}
+.img-container ul{
+    list-style-type: none;
+}

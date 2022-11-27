@@ -16,6 +16,14 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <!-- Custom styles for this template-->
     <link href="public/stylesheets/main.min.css" rel="stylesheet">
+    <link href="public/stylesheets/style.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link href="public/stylesheets/mdb.min.css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 
 <body id="page-top">
@@ -169,60 +177,68 @@
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                        
                     </div>
 
 
                     <!-- Content Row -->
 
                     <div class="row">
-                        <div class="card container-fluid shadow mb-4">
-                            <div class="card-header py-3">
-                                <h6 id="top-scorer-title" class="m-0 font-weight-bold text-primary">Top Scorers - UEFA Champions League - Season 2022</h6>
-                            </div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <div>
-                                        <canvas class="topScorers"></canvas>
-                                        <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.0.1/chart.umd.js"></script>
+                        <div class="col-xl-8 col-lg-7">
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 id="top-scorer-title" class="m-0 font-weight-bold text-primary">Top Scorers - UEFA Champions League - Season 2022</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="chart-bar">
+                                        <canvas id="topScorer" class="topScorers"></canvas>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        
+                        <div class="col-xl-4 col-lg-5">
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Top Scorer</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="img-container align-items-center">
+                                        <img id="scorerPhoto" alt="Photo of Top Scorer">
+                                        <h5 id="player-name-scorer" class="m-0 mt-2 text-center font-weight-bold"></h5>
+                                        <p id="player-desc-scorer"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        
                     </div>
                     <div class="row">
-                        <div class="card container-fluid shadow mb-4">
-                            <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">Top Assisters - UEFA Champions League - Season 2022</h6>
-                            </div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered" id="topAssisterTable" width="100%" cellspacing="0">
-                                        <thead>
-                                            <tr>
-                                                <th>Player's name</th>
-                                                <th>Team</th>
-                                                <th>Appearences</th>
-                                                <th>Assists</th>
-                                            </tr>
-                                        </thead>
-                                        <tfoot>
-                                            <tr>
-                                                <th>Player's name</th>
-                                                <th>Team</th>
-                                                <th>Appearences</th>
-                                                <th>Assists</th>
-                                            </tr>
-                                        </tfoot>
-                                        <tbody>
-                                        </tbody>
-                                    </table>
+                        <div class="col-xl-8 col-lg-7">
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Top Assisters - UEFA Champions League - Season 2022</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="chart-bar">
+                                        <canvas id="topAssister" class="topAssisters"></canvas>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        
+                        <div class="col-xl-4 col-lg-5">
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Top Assister</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="img-container align-items-center">
+                                        <img id="assisterPhoto" alt="Photo of Top Assister">
+                                        <h5 id="player-name-assister" class="m-0 mt-2 mb-2 text-center font-weight-bold"></h5>
+                                        <ul id="player-desc-assister">
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
                     </div>
                     
                 </div>
@@ -259,11 +275,12 @@
 
     <!-- Core plugin JavaScript-->
     <script src="public/scripts/bootstrap-core/jquery.easing.min.js"></script>
-
+    <!-- MDB -->
+    <script type="text/javascript" src="public/scripts/mdb.min.js"></script>
     <!-- Scripts for all pages-->
     <script src="public/scripts/admin-bootstrap.js"></script>
-	<script src="public/scripts/main.js" type="text/javascript"></script>
-
+	<script type="text/javascript" src="public/scripts/main.js" ></script>
+   
 
 </body>
 </html>
