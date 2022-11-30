@@ -10,6 +10,20 @@ var fetchOptions = {
 
 window.onload = function () {
     loadDashboard()
+    let btnApply = document.getElementById("btnApply")
+    btnApply.addEventListener("click", () =>{
+        let selectLeague = document.getElementById("selectLeague")
+        let league = selectLeague.options[selectLeague.selectedIndex].value
+        let textLeague = selectLeague.options[selectLeague.selectedIndex].text
+        let selectSeason = document.getElementById("selectSeason")
+        let season = selectSeason.options[selectSeason.selectedIndex].value
+        document.getElementById("topScorer-title").innerHTML = "Top Scorers - "+ textLeague +" - Season " + season
+        document.getElementById("topAssister-title").innerHTML = "Top Assisters - "+ textLeague +" - Season " + season
+
+        updateTopScorers(league, season)
+        updateTopAssisters(league, season)
+    })
+    
 }
 
 /*
@@ -19,6 +33,7 @@ async function loadDashboard(){
     updateTopScorers("CL","2022")
     updateTopAssisters("CL","2022") 
 }
+
 
 async function updateTopScorers(leagueID, season){
     var topScorers = document.getElementById("topScorer")
