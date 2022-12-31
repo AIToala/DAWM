@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
+div.banner{
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 20px 5px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+}
+div.banner img{
+    padding: 20px;
+    width: 50%;
+    object-fit: cover;
+    object-position: center;
+}
+div.banner .text-banner{
+   padding: 24px 20px 0px 20px;
+   gap: 15px;
+   width: 100%;
+   align-items: center;
+   justify-content: center;
+}
+div.banner .text-banner h1{
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #000000;
+    font-family: 'Lato', sans-serif, Arial, Helvetica;
+}
+div.banner .text-banner hr{
+    height: 10px;
+    color: #000000;
+}
