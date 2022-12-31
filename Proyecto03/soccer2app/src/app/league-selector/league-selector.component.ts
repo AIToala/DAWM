@@ -8,55 +8,59 @@ import { Component, Output, EventEmitter } from '@angular/core';
 export class LeagueSelectorComponent {
   title = 'Leagues';
   @Output() leagueSelected = new EventEmitter<string>();
-  selectedLeague: string = "WC";
 
-  onClick(leagueID:string){
-    this.leagueSelected.emit(leagueID);
-  }
   leagues:any[] = [
     {
       name:'World Cup',
       image:'../../assets/leagues/wc.png',
-      id: 'WC'
+      acronym: 'WC',
+      id: '1',
     },
     {
       name:'Champions League',
       image:'../../assets/leagues/cl.png',
-      id: 'CL'
+      acronym: 'CL',
+      id: '2',
     },
     {
       name:'Europa League',
       image:'../../assets/leagues/el.png',
-      id: 'EL'
+      acronym: 'EL',
+      id: '3',
     },
     {
       name:'La Liga',
       image:'../../assets/leagues/ll.png',
-      id: 'LL'
+      acronym: 'LL',
+      id: '140',
     },
     {
       name:'Ligue 1',
       image:'../../assets/leagues/l1.png',
-      id: 'L1'
+      acronym: 'L1',
+      id: '61',
     },
     {
       name:'Bundesliga',
       image:'../../assets/leagues/bl.png',
-      id: 'BL'
+      acronym: 'BL',
+      id: '78',
     },
     {
       name:'Premier League',
       image:'../../assets/leagues/pl.png',
-      id: 'PL'
+      acronym: 'PL',
+      id: '39',
     },
     {
       name:'Serie A',
       image:'../../assets/leagues/sa.png',
-      id: 'SA'
+      acronym: 'SA',
+      id: '135',
     },
   ] 
-  ngOnInit() {
-    this.selectedLeague = this.leagues[0].id;
+  onClick(leagueID:string){
+    this.leagueSelected.emit(leagueID);
   }
   constructor(){
     this.leagues = this.leagues;

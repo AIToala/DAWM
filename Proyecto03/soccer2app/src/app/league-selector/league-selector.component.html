@@ -1,8 +1,8 @@
 <ul class="list-unstyled leagues-list">
     <div class="league-container">
-        <li *ngFor="let league of leagues; let first = first">
-            <div class="league-item" [class.selected]="first">
-                <button (click)="onClick(league.id);leagueSelected.emit(league.id)">
+        <li *ngFor="let league of leagues">
+            <div class="league-item">
+                <button (click)="onClick(league.id)">
                     <img src="{{league.image}}" alt="{{league.name}}">
                     <h3>{{league.name}}</h3>
                 </button>

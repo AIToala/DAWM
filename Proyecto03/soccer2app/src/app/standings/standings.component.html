@@ -1,3 +1,63 @@
 <h1 class="text-center p-4">Standings</h1>
 <hr>
-<app-league-selector (leagueSelected)="selectedLeague = $event"></app-league-selector>
+<app-league-selector (leagueSelected)="onLeagueSelected($event)"></app-league-selector>
+<hr>
+<div class="standing-container" *ngIf="data">
+    <h2 class="standing-title">{{data.name}}</h2>
+    <div *ngIf="groups">
+        <div *ngFor="let group of data.standings">
+            <h3 class="standing-group">{{group['0'].group}}</h3>
+            <table>
+                <thead>
+                    <th>#</th>
+                    <th>Team</th>
+                    <th>MP</th>
+                    <th>W</th>
+                    <th>D</th>
+                    <th>L</th>
+                    <th>GD</th>
+                    <th>PTS</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let team of group">
+                        <td>{{team.rank}}</td>
+                        <td>{{team.team.name}}</td>
+                        <td>{{team.all.played}}</td>
+                        <td>{{team.all.win}}</td>
+                        <td>{{team.all.draw}}</td>
+                        <td>{{team.all.lose}}</td>
+                        <td>{{team.goalsDiff}}</td>
+                        <td>{{team.points}}</td>
+                    </tr>    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div *ngIf="!groups">
+        <table>
+            <thead>
+                <th>#</th>
+                <th>Team</th>
+                <th>MP</th>
+                <th>W</th>
+                <th>D</th>
+                <th>L</th>
+                <th>GD</th>
+                <th>PTS</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let lTeam of data.standings[0]">
+                    <td>{{lTeam.rank}}</td>
+                    <td>{{lTeam.team.name}}</td>
+                    <td>{{lTeam.all.played}}</td>
+                    <td>{{lTeam.all.win}}</td>
+                    <td>{{lTeam.all.draw}}</td>
+                    <td>{{lTeam.all.lose}}</td>
+                    <td>{{lTeam.goalsDiff}}</td>
+                    <td>{{lTeam.points}}</td>
+                </tr>
+                    
+            </tbody>
+        </table>
+    </div>
+</div>
