@@ -1,1 +1,22 @@
-<p>news-item works!</p>
+<ul class="list-unstyled news-list">
+    <div class="news">
+
+        <li *ngFor="let new of news">
+            <div class="news-container" routerLink="/news">
+
+                <div class="news-image">
+                    <img src="{{new.image}}" alt="{{new.title}}">
+                </div>
+                <div class="news-content">
+                    <div class="meta">
+                        <p class="author">{{new.author}}</p>
+                        <p class="date">{{new.date}}</p>
+                    </div>
+                    <h3 class="title">{{new.title}}</h3>
+                    <p class="description">{{new.description}}</p>
+                    <a href="{{new.link_credits}}" class="credits">Credits to {{new.credits}}</a>
+                </div>
+            </div>
+        </li>
+    </div>
+</ul>

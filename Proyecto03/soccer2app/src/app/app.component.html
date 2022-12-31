@@ -1,2 +1,64 @@
-<app-header></app-header>
-<app-logobanner></app-logobanner>
+<mat-drawer-container class="container-nav">
+    <mat-drawer #enlaces class="sidenav" mode="over">
+      <img class="logoMenu" src="assets/logo/logo-color.png" alt="F2">
+      <hr>
+      <mat-nav-list>
+        <mat-list-item routerLink="/home" routerLinkActive="active" (click)="menu(enlaces)">
+          <svg class="icon" viewBox="0 0 32 32">
+            <path d="M32 18.451l-16-12.42-16 12.42v-5.064l16-12.42 16 12.42zM28 18v12h-8v-8h-8v8h-8v-12l12-9z"></path>
+          </svg>
+          <span>Home</span>
+        </mat-list-item>
+        <mat-list-item routerLink="/news" routerLinkActive="active" (click)="menu(enlaces)">
+          <svg class="icon" viewBox="0 0 32 32">
+            <path d="M28 8v-4h-28v22c0 1.105 0.895 2 2 2h27c1.657 0 3-1.343 3-3v-17h-4zM26 26h-24v-20h24v20zM4 10h20v2h-20zM16 14h8v2h-8zM16 18h8v2h-8zM16 22h6v2h-6zM4 14h10v10h-10z"></path>
+          </svg>
+          <span>News</span>
+        </mat-list-item>
+        <mat-list-item routerLink="/standings" routerLinkActive="active" (click)="menu(enlaces)">
+          <svg class="icon" viewBox="0 0 32 32">
+            <path d="M26 6v-4h-20v4h-6v4c0 3.314 2.686 6 6 6 0.627 0 1.232-0.096 1.801-0.275 1.443 2.063 3.644 3.556 6.199 4.075v6.2h-2c-2.209 0-4 1.791-4 4h16c0-2.209-1.791-4-4-4h-2v-6.2c2.555-0.519 4.756-2.012 6.199-4.075 0.568 0.179 1.173 0.275 1.801 0.275 3.314 0 6-2.686 6-6v-4h-6zM6 13.625c-1.999 0-3.625-1.626-3.625-3.625v-2h3.625v2c0 1.256 0.232 2.457 0.655 3.565-0.213 0.039-0.431 0.060-0.655 0.060zM29.625 10c0 1.999-1.626 3.625-3.625 3.625-0.224 0-0.442-0.021-0.655-0.060 0.423-1.107 0.655-2.309 0.655-3.565v-2h3.625v2z"></path>
+          </svg>
+          <span>Standings</span>
+        </mat-list-item>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>Analytics</mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-nav-list>
+            <mat-list-item routerLink="/topscorer" routerLinkActive="active" (click)="menu(enlaces)">
+              <img src="assets/icons/icon-boot.png" alt="boot" class="icon">
+              <span>Top Scorer</span>
+            </mat-list-item>
+            <mat-list-item routerLink="/topassister" routerLinkActive="active" (click)="menu(enlaces)">
+              <img src="assets/icons/icon-assister.png" alt="topassister" class="icon">
+              <span>Top Assister</span>
+            </mat-list-item>
+          </mat-nav-list>
+        </mat-expansion-panel>
+      </mat-nav-list>
+      <mat-nav-list class="bottom-nav">
+        <mat-list-item routerLink="/FAQ" routerLinkActive="active" (click)="menu(enlaces)">
+          <svg class="icon" viewBox="0 0 32 32">
+            <path d="M14 22h4v4h-4zM22 8c1.105 0 2 0.895 2 2v6l-6 4h-4v-2l6-4v-2h-10v-4h12zM16 3c-3.472 0-6.737 1.352-9.192 3.808s-3.808 5.72-3.808 9.192c0 3.472 1.352 6.737 3.808 9.192s5.72 3.808 9.192 3.808c3.472 0 6.737-1.352 9.192-3.808s3.808-5.72 3.808-9.192c0-3.472-1.352-6.737-3.808-9.192s-5.72-3.808-9.192-3.808zM16 0v0c8.837 0 16 7.163 16 16s-7.163 16-16 16c-8.837 0-16-7.163-16-16s7.163-16 16-16z"></path>
+
+          </svg>
+          <span>FAQ</span>
+        </mat-list-item>
+        <mat-list-item routerLink="/terms" routerLinkActive="active" (click)="menu(enlaces)">
+          <svg class="icon" viewBox="0 0 32 32">
+            <path d="M27 0h-24c-1.65 0-3 1.35-3 3v26c0 1.65 1.35 3 3 3h24c1.65 0 3-1.35 3-3v-26c0-1.65-1.35-3-3-3zM26 28h-22v-24h22v24zM8 18h14v2h-14zM8 22h14v2h-14zM10 9c0-1.657 1.343-3 3-3s3 1.343 3 3c0 1.657-1.343 3-3 3s-3-1.343-3-3zM15 12h-4c-1.65 0-3 0.9-3 2v2h10v-2c0-1.1-1.35-2-3-2z"></path>
+          </svg>
+          <span>Terms and Conditions</span>
+        </mat-list-item>
+      </mat-nav-list>     
+    </mat-drawer>
+    <mat-toolbar color="#fff">
+        <button mat-icon-button color="accent" aria-label="menu" (click)="menu(enlaces)">  
+            <mat-icon>menu</mat-icon>  
+        </button> 
+        <img src="assets/logo/logo-color.png" alt="F2">
+        <span class="space"></span>
+    </mat-toolbar>    
+    <router-outlet></router-outlet>
+</mat-drawer-container>
