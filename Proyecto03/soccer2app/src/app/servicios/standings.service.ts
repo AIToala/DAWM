@@ -14,15 +14,17 @@ export class StandingsService {
     const apikey = '576a56d04d67566d241abdf338284bd3';
     let url = 'https://v3.football.api-sports.io/standings?';
     const host = 'v3.football.api-sports.io'
-    return this.http.get(url+"league="+leagueID+"&season=2022", {
+    return this.http.get<any>(url+"league="+leagueID+"&season=2022", {
       headers: {
         'x-rapidapi-key': apikey,
         'x-rapidapi-host': host,
       }
     }).pipe(
       map(response => {
-        if(Object.entries(response).at(2)?.[1].requests.length > 30){
+        if(response.errors.length > 0){
           throw new Error("No more usage in API left");
+        }else{
+          return response;
         }
       }),
       catchError(error => {

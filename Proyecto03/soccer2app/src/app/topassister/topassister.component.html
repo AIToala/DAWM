@@ -1,1 +1,47 @@
-<p>topassister works!</p>
+<h1 class="text-center p-4">Top Assister</h1>
+<hr>
+<app-league-selector (leagueSelected)="onLeagueSelected($event)"></app-league-selector>
+<hr>
+<div class="top-container" *ngIf="data">
+    <h2>{{data.response[0].statistics[0].league.name}}</h2>
+    <h4>Top Scorer</h4>
+    <div class="playerCard">
+        <div class="ribbonInfo">
+            <div class="assists">
+                <p>{{topAssisters[0].assists}}</p>
+                <p>Assists</p>
+            </div>
+            <img src="{{topAssisters[0].teamLogo}}" alt="teamLogo">
+            <p>{{topAssisters[0].nationality}}</p>
+            <p>{{topAssisters[0].position}}</p>
+        </div>
+        <div class="player">
+            <div class="playerPhoto">
+                <img src="{{topAssisters[0].photo}}" alt="player photo">
+            </div>
+            <div class="playerInfo">
+                <span class="name">{{topAssisters[0].name}}</span>
+            </div>
+        </div>
+        
+    </div>
+    <h4>Runnerups</h4>
+    <div class="runnerups">
+        
+        <div class="runnerup" *ngFor="let runnerup of topAssisters.slice(1, 5)">
+            <div class="runnerupPhoto">
+                <img src="{{runnerup.photo}}" alt="runnerup photo">
+                <div>
+                    <div class="assists">
+                        <span>{{runnerup.assists}}</span>
+                        <p>Assists</p>
+                    </div>
+                    <img src="{{runnerup.teamLogo}}" alt="teamLogo">
+                    <span>{{runnerup.nationality}}</span>
+                    <span>{{runnerup.position}}</span>
+                </div>
+            </div>
+            <h2 class="name">{{runnerup.name}}</h2>
+        </div>
+    </div>
+</div>

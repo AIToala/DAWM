@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic');
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,500,700,400italic');
+
+h1, h2, h3, h4{
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+}
+span{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+
+}
+.top-container{
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+.playerCard{
+    width: 75%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.playerCard .ribbonInfo{
+    width:20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5px;
+    text-align: center;
+    background-color: #ccc;
+}
+.playerCard .ribbonInfo img{
+    width: 75%;
+    height: 100%;
+    border-radius: 5px;
+}

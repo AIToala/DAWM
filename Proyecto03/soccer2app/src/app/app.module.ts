@@ -30,6 +30,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatExpansionModule} from '@angular/material/expansion';
 
+//Extra-Modules
 
 
 @NgModule({
@@ -45,7 +46,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
     TopscorerComponent,
     TopassisterComponent,
     FaqComponent,
-    TermsComponent
+    TermsComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,7 +59,6 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatSidenavModule,
     MatListModule,
     MatExpansionModule,
-
   ],
   providers: [],
   bootstrap: [AppComponent]

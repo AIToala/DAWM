@@ -1,1 +1,19 @@
-<p>topscorer works!</p>
+<h1 class="text-center p-4">Top Assister</h1>
+<hr>
+<app-league-selector (leagueSelected)="onLeagueSelected($event)"></app-league-selector>
+<hr>
+<div class="photoCard">
+    <div class="photoCard_image" *ngIf="data">
+        <img src="" alt="player photo">
+    </div>
+    <div class="photoCard_content">
+        <h2 class="photoCard_title"></h2>
+        <p class="photoCard_text">Team: </p>
+        <p class="photoCard_text">League: </p>
+        <p class="photoCard_text">Season: </p>
+        <p class="photoCard_text">Assists: </p>
+    </div>
+</div>
+<div class="runnerups">
+
+</div>

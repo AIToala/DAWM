@@ -21,27 +21,19 @@
           </svg>
           <span>Standings</span>
         </mat-list-item>
-        <mat-expansion-panel>
-          <mat-expansion-panel-header>
-            <mat-panel-title>Analytics</mat-panel-title>
-          </mat-expansion-panel-header>
-          <mat-nav-list>
-            <mat-list-item routerLink="/topscorer" routerLinkActive="active" (click)="menu(enlaces)">
-              <img src="assets/icons/icon-boot.png" alt="boot" class="icon">
-              <span>Top Scorer</span>
-            </mat-list-item>
-            <mat-list-item routerLink="/topassister" routerLinkActive="active" (click)="menu(enlaces)">
-              <img src="assets/icons/icon-assister.png" alt="topassister" class="icon">
-              <span>Top Assister</span>
-            </mat-list-item>
-          </mat-nav-list>
-        </mat-expansion-panel>
+        <mat-list-item routerLink="/topscorer" routerLinkActive="active" (click)="menu(enlaces)">
+          <img src="assets/icons/icon-boot.png" alt="boot" class="icon">
+          <span>Top Scorer</span>
+        </mat-list-item>
+        <mat-list-item routerLink="/topassister" routerLinkActive="active" (click)="menu(enlaces)">
+          <img src="assets/icons/icon-assister.png" alt="topassister" class="icon">
+          <span>Top Assister</span>
+        </mat-list-item>
       </mat-nav-list>
       <mat-nav-list class="bottom-nav">
         <mat-list-item routerLink="/FAQ" routerLinkActive="active" (click)="menu(enlaces)">
           <svg class="icon" viewBox="0 0 32 32">
             <path d="M14 22h4v4h-4zM22 8c1.105 0 2 0.895 2 2v6l-6 4h-4v-2l6-4v-2h-10v-4h12zM16 3c-3.472 0-6.737 1.352-9.192 3.808s-3.808 5.72-3.808 9.192c0 3.472 1.352 6.737 3.808 9.192s5.72 3.808 9.192 3.808c3.472 0 6.737-1.352 9.192-3.808s3.808-5.72 3.808-9.192c0-3.472-1.352-6.737-3.808-9.192s-5.72-3.808-9.192-3.808zM16 0v0c8.837 0 16 7.163 16 16s-7.163 16-16 16c-8.837 0-16-7.163-16-16s7.163-16 16-16z"></path>
-
           </svg>
           <span>FAQ</span>
         </mat-list-item>
