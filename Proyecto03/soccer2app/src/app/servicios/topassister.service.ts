@@ -21,7 +21,7 @@ export class TopassisterService {
       }
     }).pipe(
       map(response => {
-        if(response.errors.requests.length > 0){
+        if(response.errors.length > 0){
           throw new Error("No more usage in API left");
         }else{
           return response;
@@ -37,7 +37,7 @@ export class TopassisterService {
     return this.http.get<any>('../../assets/data/topassisters-2022.json')
     .pipe(
       map(response => {
-        return response;
+        return response[leagueAcronym];
       }),
       catchError(error => {
         console.log('Error con Local Data');

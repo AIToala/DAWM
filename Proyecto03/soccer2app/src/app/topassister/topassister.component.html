@@ -3,8 +3,8 @@
 <app-league-selector (leagueSelected)="onLeagueSelected($event)"></app-league-selector>
 <hr>
 <div class="top-container" *ngIf="data">
-    <h2>{{data.response[0].statistics[0].league.name}}</h2>
-    <h4>Top Scorer</h4>
+    <h2>{{data[0].statistics[0].league.name}}</h2>
+    <h4>Top Assister</h4>
     <div class="playerCard">
         <div class="ribbonInfo">
             <div class="assists">

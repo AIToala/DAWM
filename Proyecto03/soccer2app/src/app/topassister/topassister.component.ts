@@ -24,18 +24,19 @@ export class TopassisterComponent {
   getFromService(leagueId: string){
     this.topassisterService.getData(this.selectedLeague).subscribe(data => {
       this.data = data;
+      this.data = this.data.response;
       console.log(this.data);
       this.topAssisters = [];
       for(let i=0; i<5; i++){
         this.topAssisters.push({
-          name: this.data.response[i].player.name,
-          photo: this.data.response[i].player.photo,
-          nationality: this.data.response[i].player.nationality,
-          age: this.data.response[i].player.age,
-          team: this.data.response[i].statistics[0].team.name,
-          teamLogo: this.data.response[i].statistics[0].team.logo,
-          position: this.data.response[i].statistics[0].games.position,
-          assists: this.data.response[i].statistics[0].goals.assists
+          name: this.data[i].player.name,
+          photo: this.data[i].player.photo,
+          nationality: this.data[i].player.nationality,
+          age: this.data[i].player.age,
+          team: this.data[i].statistics[0].team.name,
+          teamLogo: this.data[i].statistics[0].team.logo,
+          position: this.data[i].statistics[0].games.position,
+          assists: this.data[i].statistics[0].goals.assists
         })
       }
     });

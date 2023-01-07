@@ -1,19 +1,47 @@
-<h1 class="text-center p-4">Top Assister</h1>
+<h1 class="text-center p-4">Top Scorer</h1>
 <hr>
 <app-league-selector (leagueSelected)="onLeagueSelected($event)"></app-league-selector>
 <hr>
-<div class="photoCard">
-    <div class="photoCard_image" *ngIf="data">
-        <img src="" alt="player photo">
+<div class="top-container" *ngIf="data">
+    <h2>{{data[0].statistics[0].league.name}}</h2>
+    <h4>Top Scorer</h4>
+    <div class="playerCard">
+        <div class="ribbonInfo">
+            <div class="goals">
+                <p>{{topScorers[0].goals}}</p>
+                <p>Goals</p>
+            </div>
+            <img src="{{topScorers[0].teamLogo}}" alt="teamLogo">
+            <p>{{topScorers[0].nationality}}</p>
+            <p>{{topScorers[0].position}}</p>
+        </div>
+        <div class="player">
+            <div class="playerPhoto">
+                <img src="{{topScorers[0].photo}}" alt="player photo">
+            </div>
+            <div class="playerInfo">
+                <span class="name">{{topScorers[0].name}}</span>
+            </div>
+        </div>
+        
     </div>
-    <div class="photoCard_content">
-        <h2 class="photoCard_title"></h2>
-        <p class="photoCard_text">Team: </p>
-        <p class="photoCard_text">League: </p>
-        <p class="photoCard_text">Season: </p>
-        <p class="photoCard_text">Assists: </p>
+    <h4>Runnerups</h4>
+    <div class="runnerups">
+        
+        <div class="runnerup" *ngFor="let runnerup of topScorers.slice(1, 5)">
+            <div class="runnerupPhoto">
+                <img src="{{runnerup.photo}}" alt="runnerup photo">
+                <div>
+                    <div class="goals">
+                        <span>{{runnerup.goals}}</span>
+                        <p>Goals</p>
+                    </div>
+                    <img src="{{runnerup.teamLogo}}" alt="teamLogo">
+                    <span>{{runnerup.nationality}}</span>
+                    <span>{{runnerup.position}}</span>
+                </div>
+            </div>
+            <h2 class="name">{{runnerup.name}}</h2>
+        </div>
     </div>
-</div>
-<div class="runnerups">
-
 </div>
