@@ -21,7 +21,7 @@ export class StandingsService {
       }
     }).pipe(
       map(response => {
-        if(response.errors.length > 0){
+        if(Object.keys(response.errors).length !== 0){
           throw new Error("No more usage in API left");
         }else{
           return response;

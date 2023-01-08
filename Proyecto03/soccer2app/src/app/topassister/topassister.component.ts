@@ -24,7 +24,6 @@ export class TopassisterComponent {
     this.topassisterService.getData(this.selectedLeague).subscribe(data => {
       this.data = data;
       this.data = this.data.response;
-      console.log(this.data);
       this.topAssisters = [];
       for(let i=0; i<5; i++){
         this.topAssisters.push({

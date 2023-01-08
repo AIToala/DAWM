@@ -6,6 +6,11 @@ h1, h2, h3, h4, h5{
 p, th, td{
     font-family: 'Roboto', sans-serif;
 }
+@media screen and (max-width: 768px){
+    p,th,td{
+        font-size: 0.75em;
+    }
+}
 table{
     width: 100%;
     border-collapse: collapse;
@@ -33,8 +38,8 @@ tr td:nth-child(1),tr td:nth-child(3), tr td:nth-child(4), tr td:nth-child(5), t
 
 .standing-container{
     margin: 0 auto;
-    width: 90%;
-    padding: 20px;
+    width: 100%;
+    padding: 5px;
 }
 .standing-container .standing-title{
     text-align: center;
