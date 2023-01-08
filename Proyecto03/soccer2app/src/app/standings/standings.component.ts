@@ -8,7 +8,7 @@ import { StandingsService } from '../../app/servicios/standings.service';
 })
 export class StandingsComponent {
   @Input() selectedLeague:string = '1';
-  data: any;
+  data: any = null;
   groups: boolean = false;
   ngOnInit(){
     this.standingsService.getData(this.selectedLeague).subscribe(data => {
@@ -24,6 +24,7 @@ export class StandingsComponent {
   }
   onLeagueSelected(leagueId:string){
     this.selectedLeague = leagueId;
+    this.groups = false;
     this.standingsService.getData(this.selectedLeague).subscribe(data => {
       this.data = data;
       this.data = this.data.response[0].league;

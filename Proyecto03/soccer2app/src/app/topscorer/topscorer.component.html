@@ -2,46 +2,59 @@
 <hr>
 <app-league-selector (leagueSelected)="onLeagueSelected($event)"></app-league-selector>
 <hr>
-<div class="top-container" *ngIf="data">
+<div class="top-container" *ngIf="data!=null">
     <h2>{{data[0].statistics[0].league.name}}</h2>
     <h4>Top Scorer</h4>
-    <div class="playerCard">
-        <div class="ribbonInfo">
-            <div class="goals">
-                <p>{{topScorers[0].goals}}</p>
-                <p>Goals</p>
-            </div>
-            <img src="{{topScorers[0].teamLogo}}" alt="teamLogo">
-            <p>{{topScorers[0].nationality}}</p>
-            <p>{{topScorers[0].position}}</p>
-        </div>
-        <div class="player">
+    <div class="playerCard card-glow-gold">
+        <div class="top">
             <div class="playerPhoto">
                 <img src="{{topScorers[0].photo}}" alt="player photo">
             </div>
-            <div class="playerInfo">
-                <span class="name">{{topScorers[0].name}}</span>
+            <div class="ribbonInfo">
+                <div class="goals">
+                    <span>{{topScorers[0].goals}}</span>
+                    <p>Goals</p>
+                </div>
+                <img src="{{topScorers[0].teamLogo}}" alt="teamLogo">
+                <p>{{topScorers[0].position}}</p>
             </div>
+            
         </div>
-        
+        <div class="bottom">
+            <h2 class="name">{{topScorers[0].name}}</h2>
+            <hr>
+            <div class="info">
+                <p>Nationality: {{topScorers[0].nationality}}</p>
+                <p>Matches played: {{topScorers[0].matches}}</p>
+            </div>
+            <hr class="hr-bottom">
+        </div>
     </div>
     <h4>Runnerups</h4>
     <div class="runnerups">
-        
         <div class="runnerup" *ngFor="let runnerup of topScorers.slice(1, 5)">
-            <div class="runnerupPhoto">
-                <img src="{{runnerup.photo}}" alt="runnerup photo">
-                <div>
+            <div class="top">
+                <div class="playerPhoto">
+                    <img src="{{runnerup.photo}}" alt="runnerup photo">
+                </div>
+                <div class="ribbonInfo">
                     <div class="goals">
                         <span>{{runnerup.goals}}</span>
                         <p>Goals</p>
                     </div>
                     <img src="{{runnerup.teamLogo}}" alt="teamLogo">
-                    <span>{{runnerup.nationality}}</span>
-                    <span>{{runnerup.position}}</span>
-                </div>
+                    <p>{{runnerup.position}}</p>
+                </div>  
             </div>
-            <h2 class="name">{{runnerup.name}}</h2>
+            <div class="bottom">
+                <h2 class="name">{{runnerup.name}}</h2>
+                <hr>
+                <div class="info">
+                    <p>Nationality: {{runnerup.nationality}}</p>
+                    <p>Matches played: {{runnerup.matches}}</p>
+                </div>
+                <hr class="hr-bottom">
+            </div>            
         </div>
     </div>
 </div>

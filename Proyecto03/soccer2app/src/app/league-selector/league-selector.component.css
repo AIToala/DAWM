@@ -10,11 +10,19 @@ div.league-container{
     padding: 10px;
 
 }
+@media screen and (max-width: 768px){
+    div.league-container{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+    
+
 .league-container li{
     list-style: none;
     width: 100%;
     height: auto;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
     justify-content: center;

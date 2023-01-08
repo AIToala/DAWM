@@ -8,7 +8,7 @@ import { TopscorerService } from '../../app/servicios/topscorer.service';
 })
 export class TopscorerComponent {
   @Input() selectedLeague:string = '1';
-  data: any;
+  data: any=null;
   topScorers:any[] = [];
 
   ngOnInit(){
@@ -24,7 +24,6 @@ export class TopscorerComponent {
     this.topscorerService.getData(this.selectedLeague).subscribe(data => {
       this.data = data;
       this.data = this.data.response;
-      console.log(this.data);
       this.topScorers = [];
       for(let i=0; i<5; i++){
         this.topScorers.push({
@@ -35,7 +34,8 @@ export class TopscorerComponent {
           team: this.data[i].statistics[0].team.name,
           teamLogo: this.data[i].statistics[0].team.logo,
           position: this.data[i].statistics[0].games.position,
-          goals: this.data[i].statistics[0].goals.total
+          goals: this.data[i].statistics[0].goals.total,
+          matches: this.data[i].statistics[0].games.appearences
         })
       }
     });

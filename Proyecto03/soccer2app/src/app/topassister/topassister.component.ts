@@ -8,10 +8,9 @@ import { TopassisterService } from '../../app/servicios/topassister.service';
 })
 export class TopassisterComponent {
   @Input() selectedLeague:string = '1';
-  data: any;
+  data: any=null;
   topAssisters:any[] = [];
 
-  //dataScorers.response[0].player.photo
   ngOnInit(){
     this.getFromService(this.selectedLeague);
   }
@@ -36,7 +35,8 @@ export class TopassisterComponent {
           team: this.data[i].statistics[0].team.name,
           teamLogo: this.data[i].statistics[0].team.logo,
           position: this.data[i].statistics[0].games.position,
-          assists: this.data[i].statistics[0].goals.assists
+          assists: this.data[i].statistics[0].goals.assists,
+          matches: this.data[i].statistics[0].games.appearences
         })
       }
     });

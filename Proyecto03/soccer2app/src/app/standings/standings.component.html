@@ -2,7 +2,7 @@
 <hr>
 <app-league-selector (leagueSelected)="onLeagueSelected($event)"></app-league-selector>
 <hr>
-<div class="standing-container" *ngIf="data">
+<div class="standing-container" *ngIf="data!=null">
     <h2 class="standing-title">{{data.name}}</h2>
     <div *ngIf="groups">
         <div *ngFor="let group of data.standings">

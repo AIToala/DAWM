@@ -1,14 +1,26 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic');
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,500,700,400italic');
 
+@font-face {
+    font-family: "DINPro-Cond";
+    src: url("../../assets/fonts/DINPro-Cond.woff") format("woff");
+}
+@font-face {
+    font-family: "DINPro-CondMedium";
+    src: url("../../assets/fonts/DINPro-CondMedium.woff") format("woff");
+}
+@font-face {
+    font-family: "DINPro-CondBold";
+    src: url("../../assets/fonts/DINPro-CondBold.woff") format("woff");
+}
+
 h1, h2, h3, h4{
     font-family: 'Lato', sans-serif;
     font-weight: bold;
 }
-span{
-    font-family: 'Roboto', sans-serif;
+span, p{
+    font-family: "DINProCond",Arial,sans-serif !important;
     font-weight: 300;
-
 }
 .top-container{
     padding: 20px;
@@ -17,30 +29,276 @@ span{
     display: flex;
     flex-direction: column;
 }
-.playerCard{
-    width: 75%;
+@keyframes card-glow-gold {
+    0%, 100% {
+        filter: drop-shadow(1px -3px 15px rgba(243,146,0,0.2));
+    }
+    50% {
+        filter: drop-shadow(1px -3px 15px rgba(243,146,0,0.8));
+    }
+}
+.card-glow-gold{
+    animation: card-glow-gold 3s infinite;
+    -webkit-animation: card-glow-gold 3s infinite;
+}
+
+div.playerCard{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2.5px;
+    border: 0.5px solid #F8BC66;
+    width: 250px;
+    height: max-content;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    background: #F8BC66;
+    margin-top: 25px;
+    margin-bottom: 50px;
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 420px){
+    div.playerCard{
+        width: 100%;
+    }
+}
+.playerCard .top{
+    position: relative;
+    width: 100%;
     height: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    overflow: hidden;
+}
+.playerCard .playerPhoto{
+    width: 100%;
+    height: auto;
+}
+.playerCard .playerPhoto img{
+    width: 100%;
+    height: 200%;
+    object-fit: cover;
+    object-position: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 .playerCard .ribbonInfo{
-    width:20%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 30%;
+    height: 100%!important;
+    padding: 5px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: top;
+    text-align: center;
+    gap: 5px;
+    border-top-left-radius: 5px;
+    background: rgba(0,0,0,0.25);
+}
+.playerCard .ribbonInfo .assists span{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 3em;
+    color: #FFE479;
+}
+.playerCard .ribbonInfo p{
+    color: #FFE479;
+    font-size: 1em;
+    white-space: normal;
+    
+}
+.playerCard .ribbonInfo img{
+    width: 100%;
+    height: auto;
+    object-fit: fill;
+    object-position: center;
+}
+.playerCard .bottom{
+    margin-top: auto;
+    display: flex;
+    padding: 10px;
+    position: relative;
+    width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 1.5px;
-    text-align: center;
-    background-color: #ccc;
+    background: url(../../assets/wc-heroes.png);
+    background-size: auto;
+    background-position-x: center;
+    background-position-y: -440px;
+    background-repeat: no-repeat;
+    gap: 1.5px;    
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
-.playerCard .ribbonInfo img{
-    width: 75%;
-    height: 100%;
+.playerCard .bottom .name{
+    font-size: 1.5em;
+    color: #ffe88f;
+    text-transform: uppercase;
+    font-family: "DINPro-CondBold",Arial,sans-serif !important;
+    background: rgba(0,0,0,0.20);
+    border-radius: 8px;
+    padding: 10px;
+}
+.playerCard .bottom .info{
+    font-size: 1em;
+    color: var(--icon);
+    font-family: "DINPro-Cond",Arial,sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    align-self: center;
+}
+.playerCard .bottom .info p{
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+hr{
+    margin: 0;
+    width: 100%;
+    border: 1px solid #F8BC66;
+}
+.hr-bottom{
+    width: 15%;
+}
+.runnersups{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-top: 20px;
+}
+div.runnerup{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2.5px;
+    border: 0.5px solid #F8BC66;
+    width: 250px;
+    height: max-content;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
+    background: #F8BC66;
+    margin-top: 25px;
+    margin-bottom: 50px;
+}
+@media screen and (max-width: 420px){
+    div.runnerup{
+        width: 100%;
+    }
+}
+.runnerup .top{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.runnerup .playerPhoto{
+    width: 100%;
+    height: auto;
+}
+.runnerup .playerPhoto img{
+    width: 100%;
+    height: 200%;
+    object-fit: cover;
+    object-position: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.runnerup .ribbonInfo{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 30%;
+    height: 100%!important;
+    padding: 5px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: top;
+    text-align: center;
+    gap: 5px;
+    border-top-left-radius: 5px;
+    background: rgba(0,0,0,0.25);
+}
+.runnerup .ribbonInfo .assists span{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 2.5em;
+    color: #FFE479;
+}
+.runnerup .ribbonInfo p{
+    color: #FFE479;
+    font-size: 0.75em;
+    white-space: normal;
+    
+}
+.runnerup .ribbonInfo img{
+    width: 100%;
+    height: auto;
+    object-fit: fill;
+    object-position: center;
+}
+.runnerup .bottom{
+    margin-top: auto;
+    display: flex;
+    padding: 10px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url(../../assets/gold.png);
+    background-size: auto;
+    background-position-x: center;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    gap: 1.5px;    
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+.runnerup .bottom .name{
+    font-size: 1.5em;
+    color: #50442B;
+    text-transform: uppercase;
+    font-family: "DINPro-CondBold",Arial,sans-serif !important;
+}
+.runnerup .bottom .info{
+    font-size: 1em;
+    color: var(--icon);
+    font-family: "DINPro-Cond",Arial,sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    align-self: center;
+}
+.runnerup .bottom .info p{
+    margin-bottom: 0.5rem;
+    color: #50442B;
+}
+.runnerup hr{
+    margin: 0;
+    width: 100%;
+    border: 1px solid #fff;
 }
