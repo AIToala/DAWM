@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,500,700&display=swap');
+
+h1{
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    color: #000;
+    margin: 0;
+    padding: 0;
+}
+hr{
+    border: 1px solid #000;
+    margin: 0 auto;
+    padding: 0;
+    width: 80%;
+}
+p{
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    color: #000;
+    margin: 0;
+    padding: 0;
+}
+.container{
+    margin: 10px auto;
+    padding: 0;
+    width: 80%;
+}
+
+mat-expansion-panel-header{
+    background: #fff!important;
+}
+mat-expansion-panel-header:hover{
+    background: #dc3545!important;
+    color: #fff!important;
+}
+mat-expansion-panel-header:focus{
+    background: #dc3545!important;
+}
+mat-expansion-panel-header:focus mat-panel-title{
+    color: #fff!important;
+}
+mat-expansion-panel-header:hover mat-panel-title{
+    color: #fff!important;
+}
+mat-panel-title{
+    font-family: 'Lato', sans-serif;
+
+}
+mat-expansion-panel{
+    background: #fff;
+}
+mat-expansion-panel p{
+    padding: 30px;
+}

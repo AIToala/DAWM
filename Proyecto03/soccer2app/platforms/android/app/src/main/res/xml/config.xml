@@ -8,5 +8,10 @@
     <content src="index.html" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
+    <icon density="mdpi" src="src/assets/logo/logo-color.png" />
+    <icon density="ldpi" src="src/assets/logo/logo-color.png" />
+    <icon density="hdpi" src="src/assets/logo/logo-color.png" />
+    <icon density="xhdpi" src="src/assets/logo/logo-color.png" />
+    <icon density="xxhdpi" src="src/assets/logo/logo-color.png" />
     <preference name="loglevel" value="DEBUG" />
 </widget>

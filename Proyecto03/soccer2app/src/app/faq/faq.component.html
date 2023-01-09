@@ -1,1 +1,12 @@
-<p>faq works!</p>
+<h1 class="text-center p-4">Frequent Asked Questions</h1>
+<hr>
+<div class="container">
+    <mat-expansion-panel hideToggle *ngFor="let faq of questions">
+        <mat-expansion-panel-header>
+        <mat-panel-title>
+            {{faq.question}}
+        </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>{{faq.answer}}.</p>
+    </mat-expansion-panel>
+</div>
