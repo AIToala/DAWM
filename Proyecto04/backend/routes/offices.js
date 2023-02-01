@@ -8,7 +8,7 @@ router.get('/findAll/json', function(req, res, next) {
 
 	
     Offices.findAll({  
-        attributes: { exclude: ["updatedAt"] }  
+        attributes: { exclude: [] }  
     })  
     .then(offices => {  
         res.json(offices);  
@@ -20,7 +20,7 @@ router.get('/findAll/json', function(req, res, next) {
 router.get('/findAll/view', function(req, res, next) {  
 
     Offices.findAll({  
-        attributes: { exclude: ["updatedAt"] }  
+        attributes: { exclude: [] }  
     })  
     .then(offices => {  
         res.render('offices', { title: 'Offices', arrOffices: offices });  
@@ -34,7 +34,7 @@ router.get('/findById/:id/json', function(req, res, next) {
     let officeCode = parseInt(req.params.id);
   
     Offices.findAll({  
-        attributes: { exclude: ["updatedAt", "createdAt"] } ,
+        attributes: { exclude: [] } ,
         where: { 
           [Op.and]: [
             {officeCode: officeCode}

@@ -1,0 +1,110 @@
+body {
+	margin: 0;
+}
+
+.app {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	width: 100%;
+}
+
+
+.main-content {
+	position: relative;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-size: cover;
+}
+
+.main-content::before {
+	content: '';
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
+.tableProducts{
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid #eaeaea;
+}
+.tableProducts > thead > tr > th{
+	color: white!important;
+	font-weight: bold;
+	background-color: #E33A30;
+	align-items: center;
+	justify-content: center;
+	text-align: center!important;
+}
+.tableProducts > tbody > tr:hover{
+	background-color: #EA6D66;
+}
+.tableProducts > tbody > tr > td:nth-of-type(5){
+	text-align: left!important;
+}
+.tableProducts > tbody > tr{
+	align-items: center!important;
+	justify-content: center!important;
+	text-align: center!important;
+}
+.tableProducts > tbody > tr > td, .tableProducts > thead > tr > th{
+	padding: 1rem;
+	border: 1px solid #eaeaea!important;
+}
+.tableProducts > tfoot > tr > td{
+	background-color: #E33A30;
+	font-weight: bold;
+	text-align: right!important;
+	color: white!important;
+}
+
+.tableOrdersShipped{
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid #eaeaea;
+}
+
+.tableOrdersShipped > thead > tr > th{
+	color: white!important;
+	font-weight: bold;
+	background-color: #E33A30;
+	align-items: center;
+	justify-content: center;
+	text-align: center!important;
+}
+.tableOrdersShipped > tbody > tr:hover{
+	background-color: #EA6D66;
+}
+.tableOrdersShipped > tbody > tr > td:nth-of-type(7){
+	text-align: left!important;
+}
+
+
+.tableOrdersShipped > tbody > tr > td:nth-of-type(10), .tableOrdersShipped > tbody > tr > td:nth-of-type(11){
+	text-align: right!important;
+}
+.tableOrdersShipped > tbody > tr{
+	align-items: center!important;
+	justify-content: center!important;
+	text-align: center!important;
+}
+.tableOrdersShipped > tbody > tr > td{
+	padding: 1rem;
+	border: 1px solid #eaeaea!important;
+}
+.tableOrdersShipped > tfoot > tr > td{
+	background-color: #E33A30;
+	font-weight: bold;
+	text-align: right!important;
+	color: white!important;
+	font-size: 1.2rem;
+	padding: 1rem;
+}

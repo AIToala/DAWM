@@ -3,17 +3,11 @@ var router = express.Router();
 
 const { Sequelize, Op } = require('sequelize');
 const Customer = require('../models').customers;
-const Employee = require('../models').employees;
 
 router.get('/findAll/json', function(req, res, next) {  
   
     Customer.findAll({  
-        attributes: { exclude: ["updatedAt", "createdAt"] } ,
-        include: [{
-            model: Employee,
-            attributes: ['employeeNumber'],
-            through: {attributes: []}
-          }], 
+        attributes: { exclude: [] } ,
     })  
     .then(customers => {  
         res.json(customers);  
@@ -27,12 +21,7 @@ router.get('/findById/:id/json', function(req, res, next) {
     let customerNumber = parseInt(req.params.id);
   
     Customer.findAll({  
-        attributes: { exclude: ["updatedAt", "createdAt"] } ,
-        include: [{
-            model: Employee,
-            attributes: ['employeeNumber'],
-            through: {attributes: []}
-          }], 
+        attributes: { exclude: [] } ,
         where: { 
           [Op.and]: [
             {customerNumber: customerNumber}
@@ -45,3 +34,8 @@ router.get('/findById/:id/json', function(req, res, next) {
     .catch(error => res.status(400).send(error)) 
   
 });
+
+
+
+
+module.exports = router;

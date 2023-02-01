@@ -2,11 +2,13 @@ var DataTypes = require("sequelize").DataTypes;
 var _customers = require("./customers");
 var _employees = require("./employees");
 var _offices = require("./offices");
+var _sequelizemeta = require("./sequelizemeta");
 
 function initModels(sequelize) {
   var customers = _customers(sequelize, DataTypes);
   var employees = _employees(sequelize, DataTypes);
   var offices = _offices(sequelize, DataTypes);
+  var sequelizemeta = _sequelizemeta(sequelize, DataTypes);
 
   customers.belongsTo(employees, { as: "salesRepEmployeeNumber_employee", foreignKey: "salesRepEmployeeNumber"});
   employees.hasMany(customers, { as: "customers", foreignKey: "salesRepEmployeeNumber"});
@@ -19,6 +21,7 @@ function initModels(sequelize) {
     customers,
     employees,
     offices,
+    sequelizemeta,
   };
 }
 module.exports = initModels;
